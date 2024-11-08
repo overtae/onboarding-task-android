@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "com.overtae.onboardingtaskandroid"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.overtae.onboardingtaskandroid"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -35,6 +35,13 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+ksp {
+    arg("room.schemaLocation", "${projectDir}/schemas")
 }
 
 dependencies {
@@ -50,12 +57,16 @@ dependencies {
 
     // room
     ksp(libs.androidx.room.compiler)
-    annotationProcessor(libs.androidx.room.compiler)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
 
     // hilt
     ksp(libs.dagger.hilt.compiler)
-    ksp(libs.androidx.hilt.compiler)
     implementation(libs.dagger.hilt.android)
+
+    // coroutines
+    implementation(libs.kotlinx.coroutines.android)
+
+    // viewmodel
+    implementation(libs.lifecycle.viewmodel.ktx)
 }
