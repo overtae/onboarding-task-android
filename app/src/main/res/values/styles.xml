@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomButton" parent="android:style/Widget.Button">
+        <item name="android:paddingTop">@dimen/inner_space_btn_vertical</item>
+        <item name="android:paddingBottom">@dimen/inner_space_btn_vertical</item>
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+
+    <style name="CustomButton.Border" parent="CustomButton">
+        <item name="android:textColor">@color/foreground</item>
+        <item name="android:background">@drawable/shape_round_border</item>
+    </style>
+
+    <style name="CustomButton.Solid" parent="CustomButton">
+        <item name="android:textColor">@color/background</item>
+        <item name="android:background">@drawable/shape_round_solid</item>
+    </style>
+
+    <style name="CustomEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/foreground</item>
+        <item name="boxStrokeErrorColor">@color/error</item>
+        <item name="errorTextColor">@color/error</item>
+        <item name="android:textColorHint">@color/muted_background</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/rounded</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/rounded</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/rounded</item>
+        <item name="boxCornerRadiusTopStart">@dimen/rounded</item>
+    </style>
+
+    <style name="CustomEditText.SuccessText" parent="CustomEditText">
+        <item name="helperTextTextColor">@color/success</item>
+    </style>
+
+    <style name="CustomText" parent="android:style/TextAppearance">
+        <item name="android:textColor">@color/foreground</item>
+        <item name="android:textSize">@dimen/text_normal</item>
+    </style>
+
+    <style name="CustomText.Title" parent="CustomText">
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CustomText.Subtitle" parent="android:style/TextAppearance">
+        <item name="android:textColor">@color/muted_foreground</item>
+    </style>
+
+</resources>
