@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".presentation.view.SignupActivity">
+
+    <ImageButton
+        android:id="@+id/ib_signup_back"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="@dimen/space_screen_horizontal"
+        android:background="@drawable/ic_left"
+        android:contentDescription="@string/description_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_signup_title"
+        style="@style/CustomText.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:text="@string/label_signup"
+        app:layout_constraintBottom_toTopOf="@+id/tv_signup_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ib_signup_back"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_signup_description"
+        style="@style/CustomText.Subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="@string/signup_subtitle"
+        app:layout_constraintBottom_toTopOf="@+id/til_signup_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_signup_title" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_signup_email"
+        style="@style/CustomEditText.SuccessText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_screen_horizontal"
+        android:layout_marginTop="24dp"
+        android:hint="@string/hint_email"
+        app:errorEnabled="true"
+        app:helperTextEnabled="false"
+        app:layout_constraintBottom_toTopOf="@+id/til_signup_password"
+        app:layout_constraintEnd_toStartOf="@id/btn_signup_email_check"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_signup_description">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_signup_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="emailAddress"
+            android:inputType="textEmailAddress"
+            android:textSize="@dimen/text_normal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_signup_email_check"
+        style="@style/CustomButton.Border.Enabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="@dimen/space_screen_horizontal"
+        android:enabled="false"
+        android:text="@string/signup_check_email_duplicated"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/til_signup_email"
+        app:layout_constraintTop_toTopOf="@id/til_signup_email" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_signup_password"
+        style="@style/CustomEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:layout_marginTop="8dp"
+        android:hint="@string/hint_password"
+        app:errorEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/til_signup_password_check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_signup_email"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_signup_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="password"
+            android:inputType="textPassword"
+            android:textSize="@dimen/text_normal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_signup_password_check"
+        style="@style/CustomEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:layout_marginTop="8dp"
+        android:hint="@string/hint_password_check"
+        app:errorEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/til_signup_username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_signup_password"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_signup_password_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="password"
+            android:inputType="textPassword"
+            android:textSize="@dimen/text_normal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_signup_username"
+        style="@style/CustomEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:layout_marginTop="8dp"
+        android:hint="@string/hint_username"
+        app:errorEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/btn_signup_submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_signup_password_check">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_signup_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            android:inputType="textPersonName"
+            android:maxLength="6"
+            android:textSize="@dimen/text_normal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_signup_submit"
+        style="@style/CustomButton.Solid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:layout_marginTop="14dp"
+        android:text="@string/label_signup"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_signup_username" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
