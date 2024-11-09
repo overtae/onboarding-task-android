@@ -11,6 +11,9 @@
     <string name="label_password">비밀번호</string>
     <string name="label_name">이름</string>
 
+    <!-- login -->
+    <string name="login_subtitle">돌아오신 걸 환영합니다.</string>
+
     <!-- signup -->
     <string name="signup_check_email_duplicated">중복 확인</string>
     <string name="signup_email_not_exist">사용 가능한 이메일입니다.</string>
