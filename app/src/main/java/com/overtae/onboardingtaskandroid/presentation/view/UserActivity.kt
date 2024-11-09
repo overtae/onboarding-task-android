@@ -1,5 +1,6 @@
 package com.overtae.onboardingtaskandroid.presentation.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -34,6 +35,7 @@ class UserActivity : AppCompatActivity() {
             insets
         }
 
+        initView()
         getUserData()
         initViewModel()
     }
@@ -66,8 +68,22 @@ class UserActivity : AppCompatActivity() {
     }
 
     private fun initUserData(user: User) = with(binding) {
-        tvUserName.text = user.username
-        tvUserEmail.text = user.email
-        tvUserPassword.text = user.password
+        tvUserGreetings.text = getString(R.string.user_greetings, user.username)
+        tvUserEmail.text = getString(R.string.user_email, user.email)
+        btnUserWithdraw.setOnClickListener {
+            userViewModel.deleteUser(user)
+            returnToLoginActivity()
+        }
+    }
+
+    private fun initView() = with(binding) {
+        btnUserLogout.setOnClickListener { returnToLoginActivity() }
+    }
+
+    private fun returnToLoginActivity() {
+        val intent = Intent(this@UserActivity, LoginActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        }
+        startActivity(intent)
     }
 }

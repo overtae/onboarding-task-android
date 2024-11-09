@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- text size -->
+    <dimen name="text_normal">16sp</dimen>
+    <dimen name="text_title">28sp</dimen>
+
+    <!-- space -->
+    <dimen name="space_screen_horizontal">16dp</dimen>
+
+    <!-- inner space -->
+    <dimen name="inner_space_btn_vertical">8dp</dimen>
+
+    <!-- rounded -->
+    <dimen name="rounded">8dp</dimen>
+
+    <!-- border -->
+    <dimen name="border">1dp</dimen>
+</resources>

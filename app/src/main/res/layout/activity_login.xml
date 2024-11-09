@@ -5,39 +5,75 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".presentation.view.LoginActivity">
+
+    <TextView
+        android:id="@+id/tv_login_title"
+        style="@style/CustomText.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:text="@string/label_login"
+        app:layout_constraintBottom_toTopOf="@id/tv_login_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_login_description"
+        style="@style/CustomText.Subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="@string/login_subtitle"
+        app:layout_constraintBottom_toTopOf="@id/til_login_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_login_title" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_login_email"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/CustomEditText.SuccessText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:layout_marginTop="24dp"
         android:hint="@string/hint_email"
         app:errorEnabled="true"
-        app:errorTextColor="@color/error"
         app:helperTextEnabled="false"
-        app:helperTextTextColor="@color/success"
+        app:layout_constraintBottom_toTopOf="@id/til_login_password"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/tv_login_description">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="emailAddress"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textSize="@dimen/text_normal" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_login_password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/CustomEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:layout_marginTop="8dp"
         android:hint="@string/hint_password"
         app:errorEnabled="true"
+        app:layout_constraintBottom_toTopOf="@id/btn_login_submit"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_login_email"
         app:passwordToggleEnabled="true">
@@ -47,25 +83,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textSize="@dimen/text_normal" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_login_submit"
+        style="@style/CustomButton.Solid"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:layout_marginTop="14dp"
         android:text="@string/label_login"
+        app:layout_constraintBottom_toTopOf="@id/btn_login_signup"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_login_password" />
 
     <Button
         android:id="@+id/btn_login_signup"
+        style="@style/CustomButton.Border"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:layout_marginTop="32dp"
         android:text="@string/label_signup"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_login_submit" />
 

@@ -48,12 +48,11 @@ class LoginActivity : AppCompatActivity() {
             val email = etLoginEmail.text.toString()
             val password = etLoginPassword.text.toString()
 
-            when {
-                email.isBlank() -> etLoginEmail.error = getString(R.string.error_email_empty)
-                password.isBlank() -> etLoginPassword.error =
+            if (!email.isBlank() && !password.isBlank()) loginViewModel.login(email, password)
+            else {
+                if (email.isBlank()) tilLoginEmail.error = getString(R.string.error_email_empty)
+                if (password.isBlank()) tilLoginPassword.error =
                     getString(R.string.error_password_empty)
-
-                else -> loginViewModel.login(email, password)
             }
         }
 
@@ -96,8 +95,8 @@ class LoginActivity : AppCompatActivity() {
 
     private fun handleErrorMessage(error: Result.Error) = with(binding) {
         when (error.code) {
-            ErrorCode.EMAIL -> etLoginEmail.error = error.message
-            ErrorCode.PASSWORD -> etLoginPassword.error = error.message
+            ErrorCode.EMAIL -> tilLoginEmail.error = error.message
+            ErrorCode.PASSWORD -> tilLoginPassword.error = error.message
             else -> Toast.makeText(this@LoginActivity, error.message, Toast.LENGTH_SHORT).show()
         }
     }
