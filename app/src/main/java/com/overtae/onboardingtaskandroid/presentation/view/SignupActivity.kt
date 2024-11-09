@@ -45,6 +45,8 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun initView() = with(binding) {
+        ibSignupBack.setOnClickListener { finish() }
+
         etSignupEmail.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
