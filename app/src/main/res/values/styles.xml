@@ -24,6 +24,11 @@
         <item name="android:background">@drawable/selector_btn_border_enabled</item>
     </style>
 
+    <style name="CustomButton.Danger" parent="CustomButton">
+        <item name="android:textColor">@color/error</item>
+        <item name="android:background">@drawable/shape_round_border_danger</item>
+    </style>
+
     <style name="CustomEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxStrokeColor">@color/foreground</item>
         <item name="boxStrokeErrorColor">@color/error</item>

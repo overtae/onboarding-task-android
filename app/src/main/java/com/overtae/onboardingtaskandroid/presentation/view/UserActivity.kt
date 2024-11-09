@@ -66,8 +66,7 @@ class UserActivity : AppCompatActivity() {
     }
 
     private fun initUserData(user: User) = with(binding) {
-        tvUserName.text = user.username
-        tvUserEmail.text = user.email
-        tvUserPassword.text = user.password
+        tvUserGreetings.text = getString(R.string.user_greetings, user.username)
+        tvUserEmail.text = getString(R.string.user_email, user.email)
     }
 }

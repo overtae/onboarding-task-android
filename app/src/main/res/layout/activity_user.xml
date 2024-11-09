@@ -5,41 +5,77 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".presentation.view.UserActivity">
 
     <TextView
-        android:id="@+id/tv_user_email"
+        android:id="@+id/tv_user_emoji"
+        style="@style/CustomText.Title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:text="@string/user_emoji_handshake"
+        app:layout_constraintBottom_toTopOf="@+id/tv_user_greetings"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="사용자 이메일" />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
-        android:id="@+id/tv_user_password"
+        android:id="@+id/tv_user_greetings"
+        style="@style/CustomText.Title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="@string/user_greetings"
+        app:layout_constraintBottom_toTopOf="@+id/tv_user_email"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_user_email"
-        tools:text="사용자 비밀번호" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_emoji" />
 
     <TextView
-        android:id="@+id/tv_user_name"
+        android:id="@+id/tv_user_email"
+        style="@style/CustomText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="@string/user_email"
+        app:layout_constraintBottom_toTopOf="@+id/btn_user_logout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_user_password"
-        tools:text="사용자 이름" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_greetings" />
 
     <Button
+        android:id="@+id/btn_user_logout"
+        style="@style/CustomButton.Border"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:layout_marginTop="20dp"
         android:text="@string/label_logout"
+        app:layout_constraintBottom_toTopOf="@+id/btn_user_withdraw"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_user_name" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_email" />
+
+    <Button
+        android:id="@+id/btn_user_withdraw"
+        style="@style/CustomButton.Danger"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_screen_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="@string/label_withdraw"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_user_logout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
