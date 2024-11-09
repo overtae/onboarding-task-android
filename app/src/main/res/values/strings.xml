@@ -17,6 +17,7 @@
     <!-- signup -->
     <string name="signup_check_email_duplicated">중복 확인</string>
     <string name="signup_email_not_exist">사용 가능한 이메일입니다.</string>
+    <string name="signup_subtitle">정보를 입력해주세요.</string>
 
     <!-- hint -->
     <string name="hint_email">이메일 입력</string>
